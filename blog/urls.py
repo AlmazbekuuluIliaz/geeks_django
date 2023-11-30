@@ -28,4 +28,5 @@ urlpatterns = [
     path('posts/', views.posts_view),
     path('products/', views.products_view),
     path('', views.main_view),
+    path('hashtags/', views.hashtags_view)
 ]

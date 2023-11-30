@@ -25,7 +25,7 @@ def goodbye_view(request):
 def posts_view(request):
     if request.method == 'GET':
         posts = Post.objects.all() #QuerySet
-
+        # SELECT * from post_post;
         context = {
             "posts": posts,
         }
@@ -45,3 +45,19 @@ def products_view(request):
             "products": products
         }
         return render(request, 'products/products.html')
+
+def hashtags_view(request):
+    if request.method == 'GET':
+        hashtags = HashTag.objects.all()
+
+        context = {
+            "hashtags": hashtags,
+            "name": "Asyl"
+        }
+
+        return render(
+            request,
+            'posts/hashtags.html',
+            context=context
+        )
+
